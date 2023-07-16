@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+    {% block title%}Thank You{% endblock %}
+    {% block page_name%}Thank You Page{% endblock %}
+
+    {% block content%}
+
+    <h1>Thank you for the survey</h1>
+    <h2>You answered </h2>
+    <ul>
+        {% for quest in a.questions %}
+       
+        <li>{{quest.question}} - {{responses[loop.index-1]}}</li>
+       
+
+        {% endfor %}
+
+    </ul>
+    
+    {% endblock %}

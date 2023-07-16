@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+    {% block title%}Questionaire{% endblock %}
+    {% block page_name%}Questionaire Form{% endblock %}
+
+    {% block content%}
+    {% for msg in get_flashed_messages()%}
+    <p>{{msg}}</p>
+    {% endfor %}
+    <h1>{{a.questions[questionNo].question}}</h1>
+    <form action="{{nextPage}}" method="POST">
+    <input type="radio"  name="choice" value="{{choices[0]}}">
+    <label for="choice0">{{choices[0]}}<label>
+    <input type="radio" name="choice" value="{{choices[1]}}">
+    <label for="choice1">{{choices[1]}}<label>
+    <br><br>
+    <button>Submit!!</button>
+    </form>
+    {% endblock %}
